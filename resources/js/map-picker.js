@@ -42,8 +42,9 @@ window.mapPicker = ($wire, config) => {
                 this.marker = L.marker([0, 0], {
                     icon: svgIcon,
                     draggable: false,
-                    autoPan: true
-                }, ...markerOptions).addTo(this.map)
+                    autoPan: true,
+					...markerOptions,
+                }).addTo(this.map)
                 this.map.on('move', () => this.marker.setLatLng(this.map.getCenter()))
             }
 
