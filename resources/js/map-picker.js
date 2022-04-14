@@ -32,6 +32,7 @@ window.mapPicker = ($wire, config) => {
 
 
             if (config.showMarker === true) {
+				const markerOptions = config.markerOptions || {};
                 const svgIcon = L.divIcon({
                     html: `<svg xmlns="http://www.w3.org/2000/svg" class="map-icon" width="36" height="36" viewBox="0 0 24 24"><path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>`,
                     className: "",
@@ -42,7 +43,7 @@ window.mapPicker = ($wire, config) => {
                     icon: svgIcon,
                     draggable: false,
                     autoPan: true
-                }).addTo(this.map)
+                }, ...markerOptions).addTo(this.map)
                 this.map.on('move', () => this.marker.setLatLng(this.map.getCenter()))
             }
 
