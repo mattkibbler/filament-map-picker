@@ -172,7 +172,7 @@ class OSMMap extends Field implements MapOptions
 
     public function hasJs(): bool
     {
-        return true;
+        return false;
     }
 
     public function jsUrl(): string
@@ -183,7 +183,7 @@ class OSMMap extends Field implements MapOptions
 
     public function hasCss(): bool
     {
-        return true;
+        return false;
     }
 
     public function cssUrl(): string
@@ -202,4 +202,3 @@ class OSMMap extends Field implements MapOptions
         $this->default(['lat' => 0, 'lng' => 0]);
     }
 }
-
