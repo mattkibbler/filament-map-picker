@@ -44,7 +44,7 @@ window.mapPicker = ($wire, config) => {
             this.map.on('moveend', () => {
                 let coordinates = this.getCoordinates();
                 if (config.draggable && (coordinates.lng !== this.map.getCenter()['lng'] || coordinates.lat !== this.map.getCenter()['lat'])) {
-                    $wire.set(config.statePath, this.map.getCenter(), false)
+                    $wire.set(config.statePath, this.map.getCenter(), true)
                 }
             })
 
